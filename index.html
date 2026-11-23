@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,26 +21,51 @@ body {
   color: var(--dark);
   font-family: Georgia, 'Times New Roman', serif;
 }
-nav {
+.site-nav {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 7%;
+  gap: 24px;
+  padding: 18px 7%;
   border-bottom: 1px solid #d9cdb4;
+  background: var(--cream);
 }
-nav .brand {
+.site-nav .brand {
+  flex-shrink: 0;
   font-weight: bold;
   letter-spacing: 2px;
   color: var(--orange);
   font-size: 17px;
+  text-decoration: none;
 }
-nav a {
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+.nav-links a {
   color: var(--dark);
   text-decoration: none;
-  margin-left: 22px;
   font-family: Arial, sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
+  letter-spacing: .35px;
+  white-space: nowrap;
+}
+.nav-links a:hover { color: var(--orange); }
+.menu-toggle {
+  display: none;
+  border: 1px solid #d9cdb4;
+  border-radius: 3px;
+  padding: 10px 13px;
+  background: transparent;
+  color: var(--dark);
+  font: bold 12px Arial, sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
 }
 .hero {
   text-align: center;
@@ -107,9 +131,7 @@ section { padding: 80px 8%; }
   font-size: 19px;
   line-height: 1.8;
 }
-.events {
-  background: var(--light);
-}
+.events { background: var(--light); }
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -192,53 +214,77 @@ footer {
   font: 12px Arial, sans-serif;
   letter-spacing: 1px;
 }
-@media(max-width:700px) {
-  nav { padding: 17px 5%; }
-  nav .brand { font-size: 13px; }
-  nav a { margin-left: 10px; font-size: 11px; }
+@media (max-width: 1050px) {
+  .site-nav { padding-left: 5%; padding-right: 5%; }
+  .nav-links { gap: 8px 13px; }
+  .nav-links a { font-size: 11px; }
+}
+@media (max-width: 760px) {
+  .site-nav {
+    padding: 16px 5%;
+    flex-wrap: wrap;
+  }
+  .site-nav .brand { font-size: 14px; }
+  .menu-toggle { display: block; }
+  .nav-links {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-top: 8px;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a {
+    padding: 13px 2px;
+    border-top: 1px solid #e3d7c0;
+    font-size: 12px;
+  }
   .hero { padding: 75px 18px; }
   .hero h1 { letter-spacing: -2px; }
   .hero p { font-size: 17px; }
   section { padding: 65px 7%; }
   .cards { grid-template-columns: 1fr; gap: 15px; }
   .card { padding: 25px; }
+  .strip { letter-spacing: 1.5px; font-size: 11px; }
 }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="brand">THE GOOD INTENTIONS</div>
-  <div>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="brand" href="index.html">THE GOOD INTENTIONS</a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" onclick="toggleMenu()">MENU</button>
+  <div class="nav-links" id="nav-links">
     <a href="#about">ABOUT</a>
-<a href="#music">THE BAND</a>
-<a href="pricing.html">PACKAGES & PRICING</a>
-<a href="individual-services.html">INDIVIDUAL SERVICES</a>
-<a href="booking.html">BOOKING INFO</a>
-<a href="cancellation.html">CANCELLATION</a>
-<a href="#contact">CONTACT</a>
+    <a href="#music">THE BAND</a>
+    <a href="pricing.html">PACKAGES &amp; PRICING</a>
+    <a href="individual-services.html">INDIVIDUAL SERVICES</a>
+    <a href="booking.html">BOOKING INFO</a>
+    <a href="cancellation.html">CANCELLATION</a>
+    <a href="#contact">CONTACT</a>
   </div>
 </nav>
 
 <header class="hero">
   <div class="eyebrow">Wedding · Corporate · Festivals</div>
   <h1>THE GOOD <span>INTENTIONS</span></h1>
-  <p>Great music. Good times. All the right intentions.</p>
-  <a class="button" href="#contact">Let's make it a good time</a>
+  <p>Live music for weddings, corporate events and festivals.</p>
+  <a class="button" href="#contact">Enquire about your event</a>
 </header>
 
 <div class="strip">
-  GOOD MUSIC &nbsp; ✦ &nbsp; GOOD PEOPLE &nbsp; ✦ &nbsp; GOOD TIMES
+  FROM ACOUSTIC DUO TO SIX-PIECE BAND
 </div>
 
 <section id="about">
   <h2 class="section-title">A good time starts here.</h2>
   <p class="intro">
-    The Good Intentions are all about great music, good times and
-    getting people on the dancefloor. Bringing together feel-good
-    classics, crowd favourites and infectious party vibes, they
-    deliver a lively soundtrack for any occasion. They bring the
-    energy, keep the good times rolling and make it a night to remember.
+    We're all about great music, good times and getting people on the
+    dancefloor. Bringing together feel-good classics, crowd favourites
+    and infectious party vibes, we create a lively soundtrack for any
+    occasion. We bring the energy, keep the good times rolling and make
+    it a night to remember.
   </p>
 </section>
 
@@ -270,7 +316,7 @@ footer {
   <h2 class="section-title">Your band. Your way.</h2>
   <p class="intro">
     From an intimate acoustic duo to a full six-piece party band,
-    The Good Intentions can be tailored to suit your event,
+    we can tailor The Good Intentions to suit your event,
     your space and your vibe.
   </p>
   <div class="lineup-list">
@@ -286,7 +332,7 @@ footer {
 </section>
 
 <div class="quote">
-  <p>"Your good time starts with The Good Intentions."</p>
+  <p>"The right soundtrack. The right atmosphere. A night to remember."</p>
 </div>
 
 <section class="contact" id="contact">
@@ -308,6 +354,21 @@ footer {
   © 2026 THE GOOD INTENTIONS
 </footer>
 
+<script>
+function toggleMenu() {
+  const menu = document.getElementById('nav-links');
+  const button = document.querySelector('.menu-toggle');
+  const isOpen = menu.classList.toggle('open');
+  button.setAttribute('aria-expanded', String(isOpen));
+}
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    const menu = document.getElementById('nav-links');
+    const button = document.querySelector('.menu-toggle');
+    menu.classList.remove('open');
+    button.setAttribute('aria-expanded', 'false');
+  });
+});
+</script>
 </body>
 </html>
-
