@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5efdf">
+  <title>Wedding Packages | The Good Intentions</title>
+  <style>
+    :root {
+      --cream: #f5efdf;
+      --paper: #fffaf0;
+      --ink: #34291f;
+      --muted: #75685a;
+      --orange: #a94f2b;
+      --orange-dark: #84391f;
+      --gold: #e5b94f;
+      --line: #dfd2bb;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .topbar {
+      background: var(--orange);
+      color: var(--paper);
+      padding: 13px 20px;
+      text-align: center;
+      font: 700 11px/1.4 Arial, sans-serif;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    header {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 24px 12px;
+      text-align: center;
+    }
+    .brand {
+      color: var(--orange);
+      font-size: clamp(30px, 6vw, 54px);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      margin: 5px 0 14px;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 25px;
+      padding: 14px 0 20px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      font: 700 11px/1.4 Arial, sans-serif;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+    nav a { text-decoration: none; }
+    nav a:hover { color: var(--orange); }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 42px 24px 70px;
+    }
+    .intro {
+      max-width: 790px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+    .eyebrow {
+      color: var(--orange);
+      font: 700 11px/1.4 Arial, sans-serif;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 10px 0 12px;
+      font-size: clamp(35px, 6vw, 58px);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+    .intro-copy {
+      margin: 0 auto;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+    .from-price {
+      display: inline-block;
+      margin-top: 23px;
+      padding: 11px 20px;
+      border: 1px solid var(--gold);
+      background: #fbf3dc;
+      color: var(--orange-dark);
+      font: 700 13px/1.5 Arial, sans-serif;
+      letter-spacing: .04em;
+    }
+    .from-price strong { font-size: 18px; }
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      align-items: stretch;
+    }
+    .package {
+      position: relative;
+      padding: 28px 28px 26px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      box-shadow: 0 5px 18px rgba(60, 43, 26, .045);
+    }
+    .package.featured {
+      border: 2px solid var(--gold);
+      background: #fffaf0;
+      box-shadow: 0 8px 24px rgba(113, 76, 24, .10);
+    }
+    .popular {
+      display: inline-block;
+      margin: -2px 0 13px;
+      padding: 5px 10px;
+      background: var(--gold);
+      color: #3d2d17;
+      font: 800 10px/1.3 Arial, sans-serif;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .package-label {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 5px 9px;
+      background: #f1d88f;
+      color: #563b17;
+      font: 800 10px/1.3 Arial, sans-serif;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    h2 {
+      margin: 0 0 5px;
+      color: var(--orange);
+      font-size: clamp(29px, 4vw, 39px);
+      line-height: 1.05;
+      letter-spacing: -.025em;
+    }
+    .tagline {
+      margin: 0 0 17px;
+      color: var(--muted);
+      font: 700 10px/1.5 Arial, sans-serif;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .package ul {
+      margin: 0;
+      padding-left: 19px;
+      color: #514438;
+      font-size: 15px;
+    }
+    .package li { padding: 0 0 8px 2px; }
+    .package li::marker { color: var(--orange); }
+    .closing {
+      margin: 42px auto 0;
+      max-width: 780px;
+      text-align: center;
+    }
+    .closing h2 {
+      color: var(--ink);
+      font-size: clamp(27px, 4vw, 38px);
+    }
+    .closing p {
+      margin: 12px auto 22px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+    .button {
+      display: inline-block;
+      padding: 13px 23px;
+      background: var(--orange);
+      color: white;
+      text-decoration: none;
+      font: 700 11px/1.4 Arial, sans-serif;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      border-radius: 2px;
+    }
+    .button:hover { background: var(--orange-dark); }
+    .footnote {
+      margin-top: 18px;
+      color: var(--muted);
+      font: 12px/1.5 Arial, sans-serif;
+    }
+    footer {
+      padding: 22px;
+      background: #3a2d22;
+      color: #f5efdf;
+      text-align: center;
+      font: 11px/1.5 Arial, sans-serif;
+      letter-spacing: .08em;
+    }
+    @media (max-width: 720px) {
+      main { padding: 32px 16px 54px; }
+      header { padding: 20px 16px 10px; }
+      nav { gap: 10px 15px; }
+      .packages { grid-template-columns: 1fr; gap: 15px; }
+      .package { padding: 24px 22px; }
+      .intro-copy { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">Weddings&nbsp; | &nbsp;Corporate&nbsp; | &nbsp;Festivals</div>
+  <header>
+    <div class="brand">The Good Intentions</div>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Packages &amp; Pricing</a>
+      <a href="individual-services.html">Individual Services</a>
+      <a href="booking.html">Booking Info</a>
+      <a href="cancellation.html">Cancellation</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="eyebrow">Wedding packages</div>
+      <h1>One day. Every moment. All the music.</h1>
+      <p class="intro-copy">
+        From the anticipation of walking down the aisle to drinks with your favourite people,
+        and finally a packed dancefloor, The Good Intentions provide the soundtrack to your
+        entire wedding day. With a lineup that grows as the celebrations unfold, we bring
+        the right atmosphere to every moment — intimate, relaxed, lively and unforgettable.
+      </p>
+      <div class="from-price">Wedding packages from <strong>$1,870</strong></div>
+    </section>
+
+    <section class="packages" aria-label="Wedding packages">
+      <article class="package">
+        <span class="package-label">Ceremony &amp; cocktails</span>
+        <h2>Prelude</h2>
+        <p class="tagline">The perfect acoustic beginning</p>
+        <ul>
+          <li>Beautiful live acoustic music as your guests arrive.</li>
+          <li>Your chosen ceremony songs, performed live.</li>
+          <li>Relaxed acoustic music as guests mingle and celebrate after the ceremony.</li>
+          <li>The perfect soundtrack to those special early moments of your day.</li>
+        </ul>
+      </article>
+
+      <article class="package">
+        <span class="package-label">Duo → 3-piece</span>
+        <h2>Celebration</h2>
+        <p class="tagline">From romantic moments to full celebration</p>
+        <ul>
+          <li>Live acoustic duo for your ceremony and cocktail hour.</li>
+          <li>Three-piece reception band to bring a little extra energy to the evening.</li>
+          <li>A lovely balance of intimate acoustic moments and a lively live-band atmosphere.</li>
+        </ul>
+      </article>
+
+      <article class="package featured">
+        <span class="popular">★ Most popular</span><br>
+        <span class="package-label">Duo → Trio → 4-piece</span>
+        <h2>Good Times</h2>
+        <p class="tagline">The complete wedding music experience</p>
+        <ul>
+          <li>Live acoustic duo for your ceremony.</li>
+          <li>Three-piece band creating the perfect atmosphere for cocktail hour.</li>
+          <li>Four-piece reception band bringing the energy, bigger sound and dancefloor favourites.</li>
+          <li>A seamless musical journey from your ceremony right through to the party.</li>
+        </ul>
+      </article>
+
+      <article class="package">
+        <span class="package-label">Duo → Trio → 5-piece</span>
+        <h2>The Party</h2>
+        <p class="tagline">Turning up the celebration</p>
+        <ul>
+          <li>Live acoustic duo for your ceremony.</li>
+          <li>Three-piece band setting the mood for cocktail hour.</li>
+          <li>Five-piece reception band delivering a fuller sound, bigger arrangements and plenty of party energy.</li>
+          <li>More musicians, more musical variety and an even bigger atmosphere as the night unfolds.</li>
+        </ul>
+      </article>
+
+      <article class="package">
+        <span class="package-label">Duo → Trio → 6-piece</span>
+        <h2>Ultimate</h2>
+        <p class="tagline">The full live band experience</p>
+        <ul>
+          <li>Live acoustic duo for your ceremony.</li>
+          <li>Three-piece band bringing the soundtrack to cocktail hour.</li>
+          <li>Six-piece reception band for the ultimate live music experience.</li>
+          <li>A huge, full-band sound, rich harmonies and an incredible atmosphere to get everyone celebrating.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="closing" style="margin-top:34px; padding:26px 22px; background:#fbf3dc; border:1px solid var(--gold);">
+      <h2>Just looking for music for one part of your day?</h2>
+      <p>Explore our individual ceremony, cocktail hour and reception options, with flexible lineup sizes to suit your plans.</p>
+      <a class="button" href="individual-services.html">Explore individual services</a>
+    </section>
+
+    <section class="closing">
+      <h2>More than a band for the reception.</h2>
+      <p>
+        Having live music woven through your whole day means every part of the celebration
+        feels connected. Start with the intimate sounds of the duo, ease into the celebrations
+        with a bigger cocktail-hour lineup, then let the full band bring the party to life.
+        However you picture your day, we can help create the soundtrack.
+      </p>
+      <a class="button" href="index.html#contact">Enquire about your wedding</a>
+      <div class="footnote">All packages can be tailored to suit your day. Enquire for a personalised quote.</div>
+    </section>
+  </main>
+
+  <footer>THE GOOD INTENTIONS &nbsp; • &nbsp; YOUR GOOD TIME STARTS HERE</footer>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5efdf">
+  <title>Individual Wedding Music Services | The Good Intentions</title>
+  <style>
+    :root {
+      --cream:#f5efdf; --paper:#fffaf0; --ink:#34291f; --muted:#75685a;
+      --orange:#a94f2b; --orange-dark:#84391f; --gold:#e5b94f; --line:#dfd2bb;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--cream); color:var(--ink); font-family:Georgia,"Times New Roman",serif; line-height:1.6; }
+    a { color:inherit; }
+    .topbar { background:var(--orange); color:var(--paper); padding:13px 20px; text-align:center; font:700 11px/1.4 Arial,sans-serif; letter-spacing:.16em; text-transform:uppercase; }
+    header { max-width:1120px; margin:0 auto; padding:24px 24px 12px; text-align:center; }
+    .brand { color:var(--orange); font-size:clamp(30px,6vw,54px); font-weight:700; line-height:1.05; letter-spacing:-.04em; margin:5px 0 14px; }
+    nav { display:flex; flex-wrap:wrap; justify-content:center; gap:10px 22px; padding:14px 0 20px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); font:700 11px/1.4 Arial,sans-serif; letter-spacing:.10em; text-transform:uppercase; }
+    nav a { text-decoration:none; } nav a:hover { color:var(--orange); }
+    main { max-width:1000px; margin:0 auto; padding:42px 24px 70px; }
+    .intro { max-width:790px; margin:0 auto 38px; text-align:center; }
+    .eyebrow { color:var(--orange); font:700 11px/1.4 Arial,sans-serif; letter-spacing:.2em; text-transform:uppercase; }
+    h1 { margin:10px 0 12px; font-size:clamp(35px,6vw,58px); line-height:1.05; letter-spacing:-.035em; }
+    .intro-copy { margin:0 auto; max-width:720px; color:var(--muted); font-size:18px; }
+    .services { display:grid; gap:20px; }
+    .service { display:grid; grid-template-columns:210px 1fr; gap:28px; align-items:center; padding:28px; background:var(--paper); border:1px solid var(--line); border-radius:3px; box-shadow:0 5px 18px rgba(60,43,26,.045); }
+    .service-art { min-height:190px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding:22px 18px; background:#f1e3c7; color:var(--orange); text-align:center; }
+    .service-title { font:700 23px/1.15 Arial,sans-serif; letter-spacing:.10em; text-transform:uppercase; }
+    .service-price { color:var(--orange-dark); font:700 17px/1.4 Arial,sans-serif; }
+    .service-tagline { max-width:190px; color:#70513c; font:italic 14px/1.35 Georgia,"Times New Roman",serif; }
+    h2 { margin:0; color:var(--ink); font-size:clamp(23px,3vw,29px); line-height:1.15; }
+    .service p { margin:8px 0 12px; color:#514438; font-size:16px; }
+    .options { margin:0; padding:0; list-style:none; display:flex; flex-wrap:wrap; gap:8px; }
+    .options li { padding:6px 11px; background:#f1d88f; color:#563b17; font:700 11px/1.4 Arial,sans-serif; letter-spacing:.04em; }
+    .note { margin:28px auto 0; max-width:760px; text-align:center; color:var(--muted); font:12px/1.6 Arial,sans-serif; }
+    .closing { margin:42px auto 0; max-width:780px; text-align:center; }
+    .closing h2 { color:var(--ink); font-size:clamp(27px,4vw,38px); }
+    .closing p { margin:12px auto 22px; color:var(--muted); font-size:17px; }
+    .button { display:inline-block; padding:13px 23px; background:var(--orange); color:white; text-decoration:none; font:700 11px/1.4 Arial,sans-serif; letter-spacing:.13em; text-transform:uppercase; border-radius:2px; }
+    .button:hover { background:var(--orange-dark); }
+    footer { padding:22px; background:#3a2d22; color:#f5efdf; text-align:center; font:11px/1.5 Arial,sans-serif; letter-spacing:.08em; }
+    @media(max-width:700px) {
+      main { padding:32px 16px 54px; } header { padding:20px 16px 10px; } nav { gap:10px 14px; }
+      .service { grid-template-columns:1fr; gap:18px; padding:22px; }
+      .service-art { min-height:145px; }
+      .intro-copy { font-size:16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">Weddings&nbsp; | &nbsp;Corporate&nbsp; | &nbsp;Festivals</div>
+  <header>
+    <div class="brand">The Good Intentions</div>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Packages &amp; Pricing</a>
+      <a href="individual-services.html">Individual Services</a>
+      <a href="booking.html">Booking Info</a>
+      <a href="cancellation.html">Cancellation</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="eyebrow">Make it your own</div>
+      <h1>Live music for every part of your day.</h1>
+      <p class="intro-copy">
+        Not every wedding needs a complete package. Whether you're after beautiful live music
+        for your ceremony, a relaxed soundtrack for cocktail hour or a band to bring your
+        reception to life, The Good Intentions can help create the right atmosphere.
+      </p>
+    </section>
+
+    <section class="services" aria-label="Individual wedding music services">
+      <article class="service">
+        <div class="service-art">
+          <div class="service-title">Ceremony</div>
+          <div class="service-price">From $1,045</div>
+          <div class="service-tagline">The beginning of your day</div>
+        </div>
+        <div>
+          <h2>Beautiful music for your “I do”</h2>
+          <p>Live acoustic music as your guests arrive, your chosen ceremony songs performed live, and those special moments as you celebrate saying “I do”.</p>
+          <ul class="options"><li>Duo</li></ul>
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-art">
+          <div class="service-title">Cocktail Hour</div>
+          <div class="service-price">From $1,045</div>
+          <div class="service-tagline">Drinks, friends &amp; good times</div>
+        </div>
+        <div>
+          <h2>Keep the celebrations flowing</h2>
+          <p>Relaxed live music while your guests mingle, enjoy a drink and settle into the celebrations. A great way to keep the atmosphere flowing after the ceremony.</p>
+          <ul class="options"><li>Duo</li><li>Trio</li></ul>
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-art">
+          <div class="service-title">Reception</div>
+          <div class="service-price">From $2,420</div>
+          <div class="service-tagline">Bring the celebration to life</div>
+        </div>
+        <div>
+          <h2>Make it a night to remember</h2>
+          <p>From an intimate live music experience to a full band sound, we’ll bring the energy, keep the good times rolling and get your guests on the dancefloor.</p>
+          <ul class="options"><li>Duo</li><li>Trio</li><li>4-piece</li><li>5-piece</li><li>6-piece</li></ul>
+        </div>
+      </article>
+    </section>
+
+    <p class="note">All prices include GST. Starting prices are based on standard performance arrangements. Final pricing may vary depending on your chosen lineup, timings, location and event requirements.</p>
+
+    <section class="closing">
+      <h2>Want the whole day covered?</h2>
+      <p>Explore our wedding packages and discover how the music and lineup can grow with your celebrations, from the ceremony right through to the dancefloor.</p>
+      <a class="button" href="pricing.html">Explore wedding packages</a>
+      <p><a href="index.html#contact">Or get in touch to talk through your plans.</a></p>
+    </section>
+  </main>
+
+  <footer>THE GOOD INTENTIONS &nbsp; • &nbsp; YOUR GOOD TIME STARTS HERE</footer>
+</body>
+</html>
